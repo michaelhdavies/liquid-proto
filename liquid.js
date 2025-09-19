@@ -12,8 +12,25 @@ let run_count = 10;
 init();
 run();
 
+function logTurn() {
+    console.log(`Turn ${turn}`);
+};
+
+function logSize() {
+    console.log(`Pool size: ${pool_size}`);
+};
+
+function init() {
+    console.log(`INIT`);
+    console.log(`Flow in: ${flow_in}`);
+    console.log(`Flow out: ${flow_out}`);
+    console.log(`Flow net: ${flow_net}`);
+    logSize();
+    logTurn();
+};
+
 function run() {
-    console.log(`RUN`)
+    console.log(`RUN`);
     while (turn <= run_count) {
         logTurn();
         logSize();
@@ -22,21 +39,4 @@ function run() {
     };
 };
 
-function logTurn() {
-    console.log(`Turn ${turn}`)
-};
-
-function logSize() {
-    console.log(`Pool size: ${pool_size}`)
-}
-
-function init() {
-    console.log(`INIT`);
-    console.log(`Flow in: ${flow_in}`);
-    console.log(`Flow out: ${flow_out}`);
-    console.log(`Flow net: ${flow_net}`)
-    logSize();
-    logTurn();
-}
-
-console.log(`END`)
+console.log(`END`);
