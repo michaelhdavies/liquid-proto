@@ -18,8 +18,8 @@ function pointerDown(e) {
     console.log('DOWN');
     clearSim();
     const p = localPoint(e);
-    poolCenter.x = p.x;
-    poolCenter.y = p.y;
+    poolCenter.x = Math.round(p.x);
+    poolCenter.y = Math.round(p.y);
     console.log(`CENTER ASSIGNED @: X: ${poolCenter.x} Y: ${poolCenter.y}`);
     createPool(poolCenter.x, poolCenter.y);
     updatePool();
@@ -88,12 +88,29 @@ function randomValue(val) {
 }
 
 function clearSim() {
-    sim.innerHTML = '';
     clearTimeout(simTimer);
     simTimer = null;
     running = false;
     turn = 0;
+    poolMax = 0;
+    poolRadius = 0;
+    poolCenter = { x: 0, y: 0 };
+    flowRate = { in: 0, out: 0, net: 0 };
+    sim.innerHTML = '';
     console.log(`SIM CLEAR`);
+    return;
+}
+
+function pauseSim() {
+    clearTimeout(simTimer);
+    simTimer = null;
+    running = false;
+    turn = 0;
+    poolMax = 0;
+    poolRadius = 0;
+    poolCenter = { x: 0, y: 0 };
+    flowRate = { in: 0, out: 0, net: 0 };
+    console.log(`SIM PAUSED`);
     return;
 }
 
@@ -129,7 +146,7 @@ function runSim() {
     if (running) return;
     running = true;
     simTimer && clearTimeout(simTimer);
-    setTimer();
+    setTimeout(setTimer, 200);
 }
 
 function runTurn() {
@@ -137,7 +154,7 @@ function runTurn() {
     const next = Math.round(Math.max(0, Math.min(poolRadius + flowRate.net, poolMax)))
     console.log(`TURN ${turn}. POOL VALUE: ${poolRadius}`)
     if (next === poolRadius || next <= 0 || turn >= turnLimit) {
-        clearSim();
+        pauseSim();
         return;
     } else {
         poolRadius = next;
