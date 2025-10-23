@@ -60,6 +60,7 @@ function createPool(x, y) {
     newLabel.id = 'label';
     newPool.style.backgroundColor = randomColor();
     newPool.style.borderColor = randomColor();
+    newLabel.style.color = randomColor();
     newPool.appendChild(newLabel);
     sim.appendChild(newPool);
     borderPx = parseFloat((getComputedStyle(newPool).borderWidth))
@@ -96,7 +97,7 @@ function clearSim() {
     poolRadius = 0;
     poolCenter = { x: 0, y: 0 };
     flowRate = { in: 0, out: 0, net: 0 };
-    sim.innerHTML = '';
+    sim.textContent = '';
     console.log(`SIM CLEAR`);
     return;
 }
@@ -165,6 +166,6 @@ function runTurn() {
 }
 
 function setTimer() {
-    simTimer = setTimeout(runTurn, 100);
+    simTimer = setTimeout(runTurn, 300);
     return simTimer;
 }
