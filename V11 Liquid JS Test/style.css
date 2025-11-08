@@ -1,0 +1,193 @@
+/* RESET */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: monospace;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 14px;
+    }
+} 
+
+@media (max-width: 900px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size:8px;
+    }
+}
+
+@media (max-width: 350px) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 250px) {
+    html {
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 200px) {
+    html {
+        font-size: 4px;
+    }
+}
+
+@media (max-width: 100px) {
+    html {
+        font-size: 3px;
+    }
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: #6c6c6c;
+    user-select: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 2;
+    font-weight: 700;
+    display: block;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* END RESET */
+
+.pool {
+    aspect-ratio: 1/1;
+    min-width: 0;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff8b0;
+    border: .5rem solid black;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+}
+
+#LIQUID {
+    width: 90vw;
+    height: 80vh;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
+}
